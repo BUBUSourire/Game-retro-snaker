@@ -13,11 +13,10 @@
 }(window)
 //  console.log(Random.getRandom(0,5))
 
+var map = document.querySelector('#map')
+
 //food
-!function (window) {
-
-    var map = document.querySelector('#map')
-
+!function () {
     var elements = [] //存储food
 
     function Food(x, y, width, height, color) {
@@ -76,4 +75,45 @@
         }
     }
 
-}(window)
+}()
+
+//snack
+!function(){
+    function Snack(width,height,direction){
+        let elements=[] //存储snack
+        this.width=width||20
+        this.height=height||20
+        this.direction=direction||'right'
+        this.body=[
+            {x:3,y:2,color:'green'},
+            {x:2,y:2,color:'rgb(153, 236, 57)'},
+            {x:1,y:2,color:'rgb(153, 236, 57)'}
+        ]
+    }
+    Snack.prototype.init=function(map){
+        for(let i=0;i<this.body.length;i++){
+            let obj=this.body[i]
+
+            let snackDiv=document.createElement('div')
+            map.appendChild(snackDiv)
+
+            let style={
+                position:'absolute',
+                width:this.width+'px',
+                height:this.height+'px',
+                left:obj.x,
+                top:obj.y,
+                backgroundColor:obj.color
+            }
+            for(let i in style){
+                foodDiv.style[i]=style[i]
+            }
+
+            element.push(snackDiv)
+
+        }
+    }
+
+    window.Snack=Snack
+
+}()
