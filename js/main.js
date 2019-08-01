@@ -1,30 +1,6 @@
 !function () {
     let timeID
-    let btn = document.querySelector('#btn')
-    map.classList.add('appear')
-
-    btn.addEventListener('click', () => {
-        play()
-        btn.disabled = true
-        map.classList.remove('appear')
-    })
-    let stop = document.querySelector('#stop')
-    stop.addEventListener('click', () => {
-        clearInterval(timeID)
-        btn.classList.add('active')
-        btn.disabled = false
-        stop.classList.add('continue')
-        stop.addEventListener('click', () => {
-            stop.classList.remove('continue')
-           console.log(Snake.prototype.move)
-            
-        })
-    })
-
    
-    
-
-
     let play = function () {
         let that = null
 
@@ -78,7 +54,50 @@
         window.Game = Game
         let gm = new Game(map)
         gm.init()
+
+        Game.prototype.movingSnake=function(){
+            
+        }
     }
 
+    //按钮处理
+    let btn = document.querySelector('#btn')
+    map.classList.add('appear')
+
+    btn.addEventListener('click', () => {
+        play()
+        btn.disabled = true
+        map.classList.remove('appear')
+    })
+
+    let stop = document.querySelector('#stop')
+    stop.addEventListener('click', () => {
+        clearInterval(timeID)
+        btn.classList.add('active')
+        btn.disabled = false
+        
+        // stop.classList.add('continue')
+
+        // let movingFood = new Food()
+        // let movingSnake = new Snake()
+        // let movingX=movingSnake.body[0].headX
+        // let movingY=movingSnake.body[0].headY
+        // console.log(movingX)
+        // console.log(movingY)
+        
+        // stop.addEventListener('click', () => {
+        //     stop.classList.remove('continue')
+
+
+        //     for (let i = movingSnake.body.length - 1; i > 0; i--) {
+        //         movingX = movingSnake.body[i - 1].x
+        //         movingX = movingSnake.body[i - 1].y
+        //     }
+
+        // })
+    })
+
+
+    
 }()
 
