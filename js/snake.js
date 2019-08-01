@@ -7,9 +7,9 @@
         this.height = height || 20
         this.direction = direction || 'right'
         this.body = [
-            { x: 3, y: 2, color: 'green' },
-            { x: 2, y: 2, color: 'rgb(153, 236, 57)' },
-            { x: 1, y: 2, color: 'rgb(153, 236, 57)' }
+            { x: 3, y: 2, color: 'rgb(28, 119, 32)' },
+            { x: 2, y: 2, color: '#68C66C'},
+            { x: 1, y: 2, color: '#68C66C'}
         ]
     }
     Snake.prototype.init = function (map) {

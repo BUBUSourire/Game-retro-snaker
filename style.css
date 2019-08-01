@@ -1,11 +1,48 @@
 * {
     padding: 0;
     margin: 0;
+    transition: all 0.5s;
+}
+.dv {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    margin: 10px auto;
 }
 .map {
     width: 600px;
     height: 600px;
-    background-color: #ccc;
+    background-color: rgb(231, 229, 229);
     margin: 30px auto;
     position: relative;
+}
+
+.map.appear {
+    background: url(images/u=2916483972\,4027432976&fm=16&gp=0.gif) no-repeat center;
+}
+
+.btn {
+    border: 0px;
+    background-color: transparent;
+    outline: none;
+    width: 70px;
+    height: 30px;
+    background: url(images/start.png) no-repeat;
+    position: absolute;
+    top: 20px;
+
+}
+.btn.active {
+    background: url(images/continue.png) no-repeat;
+}
+.stop {
+    border: 0px;
+    background-color: transparent;
+    outline: none;
+    width: 70px;
+    height: 30px;
+    background: url(images/stop.png) no-repeat;
+    position: absolute;
+    top: 60px;
+
 }

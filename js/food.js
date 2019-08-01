@@ -21,7 +21,7 @@ var map = document.querySelector('#map')
     function Food(x, y, width, height, color) {
         this.width = width || 20
         this.height = height || 20
-        this.color = color || 'rgb(153, 236, 57)'
+        this.color = color || '#FE5357'
         this.x = x || 0
         this.y = y || 0
     }
