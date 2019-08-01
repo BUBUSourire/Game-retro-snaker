@@ -2,18 +2,28 @@
     let timeID
     let btn = document.querySelector('#btn')
     map.classList.add('appear')
-    
+
     btn.addEventListener('click', () => {
         play()
-        btn.disabled=true
+        btn.disabled = true
         map.classList.remove('appear')
     })
-    let stop=document.querySelector('#stop')
-    stop.addEventListener('click',() => {
+    let stop = document.querySelector('#stop')
+    stop.addEventListener('click', () => {
         clearInterval(timeID)
         btn.classList.add('active')
-        btn.disabled=false
+        btn.disabled = false
+        stop.classList.add('continue')
+        stop.addEventListener('click', () => {
+            stop.classList.remove('continue')
+           console.log(Snake.prototype.move)
+            
+        })
     })
+
+   
+    
+
 
     let play = function () {
         let that = null
@@ -33,7 +43,7 @@
         }
 
         Game.prototype.runSnack = function (food, map) {
-                timeID = setInterval(function () {
+            timeID = setInterval(function () {
                 this.snake.move(food, map)
                 this.snake.init(map)
                 let maxX = map.offsetWidth / this.snake.width
@@ -43,12 +53,12 @@
                 if (headX < 0 || headX >= maxX) {
                     clearInterval(timeID)
                     alert('游戏结束')
-                    btn.disabled=false
+                    btn.disabled = false
                 }
                 if (headY < 0 || headY >= maxY) {
                     clearInterval(timeID)
                     alert('游戏结束')
-                    btn.disabled=false
+                    btn.disabled = false
                 }
 
             }.bind(that), 200)

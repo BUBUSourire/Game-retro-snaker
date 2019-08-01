@@ -33,7 +33,7 @@
 
 }
 .btn.active {
-    background: url(images/continue.png) no-repeat;
+    background: url(images/reset.png) no-repeat;
 }
 .stop {
     border: 0px;
@@ -44,5 +44,7 @@
     background: url(images/stop.png) no-repeat;
     position: absolute;
     top: 60px;
-
+}
+.stop.continue {
+    background: url(images/continue.png) no-repeat;
 }
